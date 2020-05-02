@@ -1,0 +1,2 @@
+https://en.wikipedia.org/wiki/Seven-segment_display_character_representations
+https://www.dcode.fr/7-segment-display

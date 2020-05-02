@@ -1,0 +1,46 @@
+:root {
+  --seg-lit-color-red: rgb(255, 0, 0);
+  --seg-lit-color-green: rgb(0, 255, 0);
+  --seg-lit-color-light-blue: rgb(128, 128, 255);
+  --seg-lit-color-yellow: rgb(255, 255, 0);
+  --seg-lit-color-pink: hsl(324, 100%, 50%);
+  --seg-lit-color-white: rgb(255, 255, 255);
+  --seg-lit-color-purple: rgb(225, 0, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2c3e50;
+}
+
+.main-wrapper {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.container-display {
+  margin: 30px 0;
+}
+
+.digit {
+  stroke-linejoin: round;
+}
+
+.bg {
+  /* display segments' background color */
+  fill: rgba(5, 5, 5, 1);
+}
+
+.segment {
+  /* LED' standby color */
+  fill: rgba(255, 255, 255, 0.04);
+}
+
+.lit {
+  /* LED' triggered color */
+  fill: var(--seg-lit-color-purple);
+}

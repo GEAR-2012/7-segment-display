@@ -1,0 +1,59 @@
+/* .optionCoolMainContainer */
+.optionCoolMainContainer {
+  width: fit-content;
+  margin: 50px auto;
+}
+/* end .optionCoolContainer */
+
+/* .optionCoolContainer */
+.optionCoolContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+}
+/* end .optionCoolContainer */
+
+/* .optionCoolText */
+.optionCoolText {
+  font: 20px Arial, sans-serif;
+  font-weight: bold;
+  margin-left: 20px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+/* end .optionCoolText */
+
+/* .optionCool */
+.optionCool {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4), inset 0px 2px 0px white;
+  background: #fcfff4;
+  background: linear-gradient(#fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+}
+
+.optionCool label {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 100%;
+  box-shadow: 0px 0px 2px 1px white, inset 0px -1px 5px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease;
+}
+
+.optionCool input[type="radio"] {
+  visibility: hidden;
+}
+
+.optionCool input[type="radio"]:checked + label {
+  background-color: rgba(106, 176, 76, 1);
+}
+/* end .optionCool */
