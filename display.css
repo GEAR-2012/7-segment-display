@@ -42,5 +42,5 @@ body {
 
 .lit {
   /* LED' triggered color */
-  fill: var(--seg-lit-color-purple);
+  fill: var(--seg-lit-color-pink);
 }
