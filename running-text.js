@@ -8,7 +8,7 @@ let exxtras = ",!/_- .=()";
 let demo = lowAlpha + "   " + uppAlpha + "   " + nums + "  " + exxtras;
 let txt_1 = "OPEN";
 let txt_2 = "CLOSED";
-let cusName = "Elvira and Petra";
+let cusName = "Petruska";
 let happyBirthDay = `
 Happy Birthday to You,
 Happy Birthday to You,
