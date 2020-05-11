@@ -4,8 +4,7 @@ Copyright © 2020 GEAR webdevelopment ltd.
 */
 
 /* control panel on / off switch */
-#ctsls-container,
-#footer-main {
+#ctsls-container {
   transition: opacity 6s;
 }
 
@@ -60,7 +59,6 @@ Copyright © 2020 GEAR webdevelopment ltd.
 }
 
 .container-control-group-sub {
-  padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;

@@ -5,6 +5,7 @@ Copyright © 2020 GEAR webdevelopment ltd.
 
 // Global control panel
 const getSub = document.querySelector("#sub");
+let footerMain = document.querySelector("#footer-main");
 let profile = "";
 let compareLamp = false; // true if the compare display is on
 let controlsLamp = true; // true if the control panels are on
@@ -13,7 +14,7 @@ let controlsLamp = true; // true if the control panels are on
 function fadeIn(caller) {
   if (!controlsLamp) {
     caller.style.opacity = 1;
-    document.querySelector("#footer-main").style.opacity = 1;
+    footerMain.style.opacity = 1;
   }
 }
 
@@ -21,7 +22,7 @@ function fadeIn(caller) {
 function fadeOut(caller) {
   if (!controlsLamp) {
     caller.style.opacity = 0;
-    document.querySelector("#footer-main").style.opacity = 0;
+    footerMain.style.opacity = 0;
   }
 }
 

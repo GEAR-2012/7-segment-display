@@ -22,6 +22,10 @@ a {
   white-space: nowrap;
 }
 
+#footer-main {
+  transition: opacity 12s;
+}
+
 @media only screen and (max-width: 500px) {
   a {
     font-size: 1rem;
