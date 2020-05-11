@@ -52,10 +52,14 @@ function controlsOnOff() {
   if (controlsLamp) {
     // hide the controls slider when the control panel is to hide
     ctrlBtnContainer.style.opacity = "0";
+    footerMain.style.opacity = 0;
+
     controlsLamp = false;
   } else {
     // show the controls slider when the control panel is to show
     ctrlBtnContainer.style.opacity = "1";
+    footerMain.style.opacity = 1;
+
     controlsLamp = true;
   }
 }
