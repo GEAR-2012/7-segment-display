@@ -1,12 +1,19 @@
+/* 
+JavaScript for the built of 7 segment display
+Copyright © 2020 GEAR webdevelopment ltd.
+*/
+
 // number of digits for a new display
-const dispSize = 12;
+let dispSize = 12;
 
 displayBuilder(dispSize);
 
 function displayBuilder(dig) {
   const cont = document.querySelector(".container-display");
+  cont.innerHTML = "";
   cont.style.display = "grid";
   cont.style.gridTemplateColumns = `repeat(${dispSize}, 1fr)`;
+  cont.style.alignItems = "center"; // new
   cont.style.gap = "2px";
 
   for (let i = 0; i < dig; i++) {

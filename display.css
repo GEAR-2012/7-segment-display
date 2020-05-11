@@ -1,3 +1,8 @@
+/* 
+CSS for the main 7 segment display
+Copyright © 2020 GEAR webdevelopment ltd.
+*/
+
 :root {
   --seg-lit-color-red: rgb(255, 0, 0);
   --seg-lit-color-green: rgb(0, 255, 0);
@@ -13,17 +18,18 @@
   padding: 0;
 }
 
-body {
-  background-color: #2c3e50;
+html {
+  background-color: #344f73;
 }
 
 .main-wrapper {
   width: 96%;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .container-display {
-  margin: 30px 0;
+  margin-bottom: 15px;
 }
 
 .digit {
@@ -33,14 +39,4 @@ body {
 .bg {
   /* display segments' background color */
   fill: rgba(5, 5, 5, 1);
-}
-
-.segment {
-  /* LED' standby color */
-  fill: rgba(255, 255, 255, 0.04);
-}
-
-.lit {
-  /* LED' triggered color */
-  fill: var(--seg-lit-color-pink);
 }

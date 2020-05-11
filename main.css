@@ -1,0 +1,30 @@
+/* 
+CSS for the rest
+Copyright © 2020 GEAR webdevelopment ltd.
+*/
+
+body {
+  user-select: none;
+}
+
+.hide {
+  display: none;
+}
+
+a {
+  font-family: roboto, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #000;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 500px) {
+  a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}

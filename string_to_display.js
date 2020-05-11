@@ -1,28 +1,32 @@
-// Look for the ***** IMPORTANT ***** comments
+/* 
+JavaScript for display the content on the main display
+Copyright © 2020 GEAR webdevelopment ltd.
+*/
 
-// fetch all digit's div into the 'theFullDisplay' array
-const theFullDisplay = [];
-for (let i = 0; i < dispSize; i++) {
-  theFullDisplay.push(
-    document.querySelectorAll(".digit.pos" + (i + 1) + " .segment")
-  );
-}
-
-// This is the main input string
-// It can be numbers 0-9, dot, letters a-f
-// Any other characters displayed as error
-// It should be commented out if the function called outside this file ***** IMPORTANT *****
-// let sampleString = "abc123";
-
-// Calling the main function
-// It should be commented out if the function called outside this file ***** IMPORTANT *****
-// theMain(sampleString);
+let segColorNoLit = "rgba(255, 255, 255, 0.04"; // when the segment (LED) is not lit
+let segColorLit = "#ff0000"; // when the segment (LED) is lit
 
 // This is the  CONTROLLER function, for display any string
 function theMain(str) {
   let myNewString = myStringValidator(str);
   let hexDigits = convertToHexArray(myNewString);
   mySwitcher(hexDigits);
+}
+
+// fetch all digit's div into the 'theFullDisplay' array
+const theFullDisplay = [];
+readDisplay();
+offAll(); // because first all LEDs are off
+function readDisplay() {
+  // delete all arr item
+  while (theFullDisplay.length > 0) {
+    theFullDisplay.pop();
+  }
+  for (let i = 0; i < dispSize; i++) {
+    theFullDisplay.push(
+      document.querySelectorAll(".digit.pos" + (i + 1) + " .segment")
+    );
+  }
 }
 
 // lit all segments in all digit on the full display
@@ -312,9 +316,11 @@ function mySwitcher(hexArray) {
     let flagArray = myFlag.split("");
     for (let i = 0; i < 8; i++) {
       if (flagArray[i] === "1") {
-        theFullDisplay[x][i].classList.add("lit");
+        // theFullDisplay[x][i].classList.add("lit");
+        theFullDisplay[x][i].style.fill = segColorLit;
       } else if (flagArray[i] === "0") {
-        theFullDisplay[x][i].classList.remove("lit");
+        // theFullDisplay[x][i].classList.remove("lit");
+        theFullDisplay[x][i].style.fill = segColorNoLit;
       }
     }
   }

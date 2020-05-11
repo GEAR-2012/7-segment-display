@@ -1,3 +1,8 @@
+<!--
+  Html for the 7 segment display web application
+  Copyright © 2020 GEAR webdevelopment ltd.
+-->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,35 +11,172 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>7 Segment Display New</title>
-    <!-- ...for 7 segment display -->
+    <title>7 Segment Display New v1.2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ******************************* CSS ******************************* -->
     <link rel="stylesheet" href="display.css" />
-
-    <!-- ...regular CSS -->
-    <link rel="stylesheet" href="regular.css" />
-
-    <!-- ...for controls with 'test.js' -->
     <link rel="stylesheet" href="controls.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
 
   <body>
     <main class="main-wrapper">
       <!-- mandatory for 7 segment display -->
       <div class="container-display"></div>
+      <!-- 
+            CONTROL PANELS ON / OFF switch
+           -->
+      <div
+        onmouseenter="fadeIn(this);"
+        onmouseleave="fadeOut(this);"
+        class="coolMainContainerCtr"
+        id="ctsls-container"
+      >
+        <div class="coolContainer">
+          <div class="slideCool">
+            <input
+              onchange="controlsOnOff();"
+              type="checkbox"
+              id="ctrls"
+              name="check"
+              checked
+            />
+            <label for="ctrls"></label>
+          </div>
+          <h3 class="coolLabel">Controls</h3>
+        </div>
+      </div>
+      <!-- This is the place for all control groups -->
+      <div class="controls">
+        <!-- This is the 'global' control panel it will handle the global variables -->
+        <div class="container-control-group" id="global">
+          <h1 class="coolGroupCaption">Global Control</h1>
+          <!-- 
+            Display size changer
+           -->
+          <div class="slide-container">
+            <div class="label-out-container">
+              <div class="slide-label">Display size</div>
+              <div class="slide-out" id="slo-01">No input !</div>
+            </div>
+            <input
+              oninput="document.querySelector('#slo-01').innerText = this.value + ' digit'; dispSizeChange(this.value)"
+              class="slider"
+              type="range"
+              id="sl-01"
+              min="4"
+              max="32"
+            />
+          </div>
+          <!-- 
+            LED color selector
+           -->
+          <div class="coolContainer">
+            <input
+              onchange="segmentColorChange(this.value)"
+              type="color"
+              value="#ff0000"
+              id="color01"
+              name="led-col"
+            />
+            <h3 class="coolLabel">LED color</h3>
+          </div>
+          <!-- 
+            LED color selector
+           -->
+          <div class="coolContainer">
+            <input
+              onchange="bgColorChange(this.value)"
+              type="color"
+              value="#2D5385"
+              id="color02"
+              name="bg-col"
+            />
+            <h3 class="coolLabel">BG color</h3>
+          </div>
+          <!-- 
+            PROFILE SELECTOR
+           -->
+          <div class="coolMainContainer">
+            <h2 class="coolSetCaption">Profiles</h2>
+            <!-- 
+              Runing text profile
+            -->
+            <div class="coolContainer">
+              <div class="optionCool">
+                <input
+                  onchange="profileController(this.id)"
+                  type="radio"
+                  id="run-text"
+                  name="programs"
+                />
+                <label for="run-text"></label>
+              </div>
+              <h3 class="coolLabel">Running text</h3>
+            </div>
+            <!-- 
+              Display tests profile
+             -->
+            <div class="coolContainer">
+              <div class="optionCool">
+                <input
+                  onchange="profileController(this.id)"
+                  type="radio"
+                  id="tests"
+                  name="programs"
+                />
+                <label for="tests"></label>
+              </div>
+              <h3 class="coolLabel">Display tests</h3>
+            </div>
+            <!-- 
+              Digital clock profile
+             -->
+            <div class="coolContainer">
+              <div class="optionCool">
+                <input
+                  onchange="profileController(this.id)"
+                  type="radio"
+                  id="clock"
+                  name="programs"
+                />
+                <label for="clock"></label>
+              </div>
+              <h3 class="coolLabel">Digital clock</h3>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+
+        <!-- This is the 'profile' control panel it will display the profile controllers -->
+        <div class="container-control-group" id="side">
+          <h1 class="coolGroupCaption">Profile Control</h1>
+          <div class="container-control-group-sub" id="sub">
+            <!-- content by javascript comes here -->
+          </div>
+        </div>
+      </div>
+      <!-- 
+  
+       -->
+      <!-- FOOTER -->
+      <footer id="footer-main">
+        <a href="mailto: sandor.tudja@gmail.com"
+          >Copyright © 2020 GEAR webdevelopment ltd.</a
+        >
+      </footer>
     </main>
-    <!-- mandatory for 7 segment display -->
+    <!-- ***************** JAVASCRIPT (the order is matter) ***************** -->
     <script src="display_builder.js"></script>
-
-    <!-- mandatory for 7 segment display -->
     <script src="string_to_display.js"></script>
-
-    <!-- optional for 7 segment display -->
-    <!-- <script src="test.js"></script> -->
-
-    <!-- optional for 7 segment display -->
-    <!-- <script src="clock.js"></script> -->
-
-    <!-- optional for 7 segment display -->
+    <script src="test.js"></script>
+    <script src="clock.js"></script>
     <script src="running-text.js"></script>
+    <script src="control.js"></script>
+    <script src="init.js"></script>
   </body>
 </html>
